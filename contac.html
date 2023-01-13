@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css_files/contact.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+</head>
+<body>
+    <header id="title">Contacto</header>
+    <div class="container_form">
+        <div>
+            <p>Nombre*:</p>
+            <input name="name" type="text" placeholder="Take" required>
+        </div>
+        <div>
+            <p>Apellido*:</p>
+            <input name="surname" type="text" placeholder="Your Time" required>
+        </div>
+        <div>
+            <p>Correo*:</p>
+            <input name="mail" type="text" placeholder="takeyourtime@gmail.com" required>
+        </div>
+        <div>
+            <p>Número de teléfono:</p>
+            <input name="phone" type="text" placeholder="123456789" required>
+        </div>
+        <div class="motivo">
+            <p>Motivo de contacto*:</p>
+            <textarea type="text" name="motive" placeholder="Me ha encantado la comida y el espacio :D" ></textarea>
+        </div>
+        <div class="send">
+            <input onclick="send()" type="submit" name="submit" value="Enviar" >
+        </div>
+        <p>Los campos marcados con * son obligatorios</p>
+    </div>
+
+    <script>
+        function send(){
+            const name = document.getElementsByName("name")[0].value;
+            const surname = document.getElementsByName("surname")[0].value;
+            const mail = document.getElementsByName("mail")[0].value;
+            const phone = document.getElementsByName("phone")[0].value;
+            const motive = document.getElementsByName("motive")[0].value;
+
+            if(name == 0 ){
+                alert("Todos los campos obligatorios deben ser reyenados")
+            }
+            else if(surname == 0){
+                alert("Todos los campos obligatorios deben ser reyenados")
+            }
+            else if(mail == 0){
+                alert("Todos los campos obligatorios deben ser reyenados")
+            }
+            else if(motive == 0){
+                alert("Todos los campos obligatorios deben ser reyenados")
+            }
+            else if (name !=0, surname !=0, mail !=0, motive !=0){
+                if(phone != 0){
+                    alert(`Su información ha sido enviada!\n\nResumen:\nNombre: ${name} ${surname}\nCorreo: ${mail}\nTeléfono: ${phone}\nMotivo: ${motive} `);
+                }
+                else{
+                    alert(`Su información ha sido enviada!\n\nResumen:\nNombre: ${name} ${surname}\nCorreo: ${mail}\nMotivo: ${motive} `);
+                }
+            }
+            else{
+                alert("Ha ocurrido un error! Intentalo más tarde")
+            }
+        }
+    </script>
+</body>
+</html>
